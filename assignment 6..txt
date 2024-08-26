@@ -117,7 +117,33 @@ int main() {
     return 0;
 }
 
-7. Write a program to count digits in a given number
+7. Write a program to count digits in a given number.
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int number, digit_count = 0;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    number = abs(number);
+
+    if (number == 0) {
+        digit_count = 1;
+    } else {
+        while (number > 0) {
+            number /= 10;  
+            digit_count++; 
+        }
+    }
+
+    printf("The number of digits is: %d\n", digit_count);
+
+    return 0;
+}
+
 
 8. Write a program to check whether a given number is a Prime number or
 not
