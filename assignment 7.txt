@@ -140,6 +140,37 @@ int main() {
 
 5. Write a program to check whether two given numbers are co-prime
 numbers or not
+
+#include <stdio.h>
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int areCoPrime(int a, int b) {
+    return gcd(a, b) == 1;
+}
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    if (areCoPrime(num1, num2)) {
+        printf("%d and %d are co-prime numbers.\n", num1, num2);
+    } else {
+        printf("%d and %d are not co-prime numbers.\n", num1, num2);
+    }
+
+    return 0;
+}
+
 6. Write a program to print all Prime numbers under 100
 7. Write a program to print all Prime numbers between two given numbers
 8. Write a program to find next Prime number of a given number
