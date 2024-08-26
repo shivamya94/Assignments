@@ -58,10 +58,25 @@ int main() {
 }
 
 
+4. Write a program to calculate sum of squares of first N natural numbers.
+#include <stdio.h>
+
+int main() {
+    int N, sum = 0;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        sum += i * i;  // Add the square of i to sum
+    }
+
+    printf("The sum of the squares of the first %d natural numbers is: %d\n", N, sum);
+
+    return 0;
+}
 
 
-
-4. Write a program to calculate sum of squares of first N natural numbers
 5. Write a program to calculate sum of cubes of first N natural numbers
 6. Write a program to calculate factorial of a number
 7. Write a program to count digits in a given number
