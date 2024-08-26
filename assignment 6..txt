@@ -76,8 +76,26 @@ int main() {
     return 0;
 }
 
-
 5. Write a program to calculate sum of cubes of first N natural numbers
+#include <stdio.h>
+
+int main() {
+    int N, sum = 0;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        sum += i * i * i;  // Add the cube of i to sum
+    }
+
+    printf("The sum of the cubes of the first %d natural numbers is: %d\n", N, sum);
+
+    return 0;
+}
+
+
+
 6. Write a program to calculate factorial of a number
 7. Write a program to count digits in a given number
 8. Write a program to check whether a given number is a Prime number or
