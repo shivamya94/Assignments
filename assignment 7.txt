@@ -208,6 +208,55 @@ int main() {
 
 
 7. Write a program to print all Prime numbers between two given numbers
+#include <stdio.h>
+#include <stdbool.h>
+
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false; 
+    }
+    if (num == 2) {
+        return true;  
+    }
+    if (num % 2 == 0) {
+        return false; 
+    }
+    for (int i = 3; i * i <= num; i += 2) {
+        if (num % i == 0) {
+            return false; 
+        }
+    }
+    return true;
+}
+
+int main() {
+    int start, end;
+
+    // Input the range from the user
+    printf("Enter the start of the range: ");
+    scanf("%d", &start);
+    printf("Enter the end of the range: ");
+    scanf("%d", &end);
+
+    // Print prime numbers in the given range
+    printf("Prime numbers between %d and %d are:\n", start, end);
+    
+    // Ensure start is not less than 2 (smallest prime number)
+    if (start < 2) {
+        start = 2;
+    }
+
+    for (int i = start; i <= end; i++) {
+        if (isPrime(i)) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
 8. Write a program to find next Prime number of a given number
 9. Write a program to check whether a given number is an Armstrong number
 or not
