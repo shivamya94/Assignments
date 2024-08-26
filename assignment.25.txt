@@ -1,0 +1,166 @@
+Assignment - 25 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+Classes and Objects
+
+1. Define a class Complex to represent a complex number. Declare instance member
+variables to store real and imaginary part of a complex number, also define instance
+member functions to set values of complex number and print values of complex
+number.
+ans:-
+#include<iostream>
+using namespace std;
+
+class complex
+{
+private :
+    int a,b;
+public:
+    void setData(int x,int y)
+    {
+      a=x;
+      b=y;
+
+    }
+    void showData()
+    {
+        cout<<"real= "<<a<<"imag= "<<b<<endl;
+
+    }
+
+};
+int main()
+{
+    complex c1,c2;
+    c1.setData(4,7);
+    c2.setData(8,9);
+    c1.showData();
+    c2.showData();
+    cout<<endl;
+}
+
+2. Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriate
+number of instance member variables and also define instance member functions to
+set values for time and display values of time.
+
+
+3. Define a class Factorial and define an instance member function to find the Factorial
+of a number using class.
+ans:
+#include<iostream>
+using namespace std;
+
+class Factorial
+{
+    private:
+
+       int fact;
+       int n;
+
+    public:
+
+       void setN(int x)
+       {
+         n = x;
+       }
+       int getN()
+       {
+         return n;
+       }
+       int getFactorial()
+       {
+         return fact;
+       }
+        int calculateFactorial()
+        {
+          int f=1,i;
+
+          if(n<=0)
+        {
+            fact =1;
+            return 0;
+        }
+        for(i=1 ; i<=n; i++)
+        {
+            f=f*i;
+        }
+        fact=f;
+    }
+};
+int main()
+{
+    Factorial f;
+    f.setN(8);
+    f.calculateFactorial();
+    cout<<"Factorial of"<<f.getN()<<" is "<<f.getFactorial();
+    return 0;
+}
+
+4. Define a class LargestNumber and define an instance member function to find the
+Largest of three Numbers using the class.
+5. Define a class ReverseNumber and define an instance member function to find
+Reverse of a Number using class.
+6. Define a class Square to find the square of a number and write a C++ program to
+Count number of times a function is called.
+7. Define a class Greatest and define instance member function to find Largest among
+3 numbers using classes.
+8. Define a class Rectangle and define an instance member function to find the area of
+the rectangle.
+9. Define a class Circle and define an instance member function to find the area of the
+circle.
+10. Define a class Area and define instance member functions to find the area of the
+different shapes like square, rectangle , circle etc.
+Ans:
+/* Define a class Area and define instance member functions to find the area of the
+different shapes like square, rectangle , circle etc.8*/
+#include<iostream>
+using namespace std;
+
+class Area
+{
+     private:
+        float side,length,breath,radius;
+     public:
+         void setSide(float a)
+         {
+             side=a;
+         }
+         void setLengthBreath(float l,float b)
+         {
+             length = l;
+             breath = b;
+         }
+         void setRadius(float r)
+         {
+             radius = r;
+         }
+
+        float areaofSquare()
+        {
+            return side*side;
+        }
+
+        float areaofRectangle()
+        {
+            return length*breath;
+        }
+
+        float areaofCircle()
+        {
+            return 3.14*radius*radius;
+        }
+
+};
+int main()
+{
+    Area a;
+    a.setSide(5);
+    a.setLengthBreath(3,6);
+    a.setRadius(6);
+
+    cout<<"Area of Square is"<<a.areaofSquare()<<endl;
+    cout<<"Area of Rectangle is"<<a.areaofRectangle()<<endl;
+    cout<<"Area of Circle is"<<a.areaofCircle()<<endl;
+
+    return 0;
+
+}

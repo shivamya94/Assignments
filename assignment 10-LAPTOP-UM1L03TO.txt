@@ -1,0 +1,116 @@
+Assignment - 10 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+Functions in C Language
+1. Write a function to calculate the area of a circle. (TSRS)
+#include<stdio.h>
+float getCircleArea(float radius)
+{
+    const float pi=3.14;
+    float area;
+
+    area = pi*radius*radius;
+    return area;
+
+}
+int main()
+{
+    float radius,CircleArea;
+    printf("Enter the Radius of the Circle: ");
+    scanf("%f",&radius);
+
+    CircleArea = getCircleArea(radius);
+    printf("The Area of the circle is: %f",CircleArea);
+
+    return 0;
+}
+
+
+2. Write a function to calculate simple interest. (TSRS).
+#include<stdio.h>
+float Simple_int(float p, float r, float t)
+{
+    float si;
+    si=(p*r*t)/100;
+    return si;
+
+}
+int main()
+{
+    float a,b,c;
+    float intrest;
+
+    printf("\nEnter Principal : \t");
+    scanf("%f",&a);
+    printf("\nEnter Year :\t");
+    scanf("%f",&b);
+    printf("Enter Rate : \t");
+    scanf("%f",&c);
+    intrest=Simple_int(a,b,c);
+    printf("\nSimple Interest = %.2f\n",intrest);
+    printf("\n");
+    return 0;
+}
+
+
+3. Write a function to check whether a given number is even or odd. Return 1 if the
+number is even, otherwise return 0. (TSRS).
+ans:
+#include<stdio.h>
+int isEven(int num)
+{
+	return !(num & 1);
+	
+}
+
+int main()
+{
+  int num;
+  printf("Enter any number: ");
+  scanf("%d",&num);
+  
+  if(isEven(num))
+  {
+  	printf("The number is even");
+  	
+  }
+  else
+  {
+  	printf("The number is odd");
+  	
+	  }	
+	return 0;
+	
+}
+4. Write a function to print first N natural numbers (TSRN).
+
+5. Write a function to print first N odd natural numbers. (TSRN)
+6. Write a function to calculate the factorial of a number. (TSRS)
+7. Write a function to calculate the number of combinations one can make from n items
+and r selected at a time. (TSRS)
+8. Write a function to calculate the number of arrangements one can make from n items
+and r selected at a time. (TSRS)
+9. Write a function to check whether a given number contains a given digit or not.
+(TSRS)
+10. Write a function to print all prime factors of a given number. For example, if the
+number is 36 then your result should be 2, 2, 3, 3. (TSRN).
+#include<stdio.h>
+int primefactor(int);
+int primefactor(int n)
+{
+    int i;
+    for(i=2; n !=1;i++)
+    {
+        while(n%i==0)
+        {
+           n=n/i;
+           printf("%d,",i);
+        }
+    }
+}
+int main()
+{
+    primefactor(36);
+    return 0;
+
+}
+

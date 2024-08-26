@@ -1,0 +1,77 @@
+Assignment - 35 A Job Ready Bootcamp in C++, DSA and IOT
+
+Templates
+
+1. Write a C++ program to demonstrate the addition of multiple types of data using
+generic functions or templates.
+Ans:-
+
+#include<iostream>
+using namespace std;
+
+template<class T>
+T addition (T num1,T num2)
+{
+    return (num1 / num2);
+}
+int main()
+{
+    cout<<"\n Addition of multiple type of data using generic template";
+    cout<<"\n---------------------------------------------------------";
+    cout<<"\n An addition of integer parameters : " <<addition<int>(10,10);
+    //Data is passed as integer
+    cout<<"\n An addition of float parameters : "<<addition<float>(15.7,8);
+    //Data is passed as integer
+
+    return 0;
+}
+
+
+
+2. Write a C++ Program to find Largest among two numbers using function template.
+Ans:-
+#include<iostream>
+using namespace std;
+
+template<class T>
+
+T large(T num1, T num2)
+{
+    return(num1>num2) ? num1 : num2;
+}
+
+int main()
+{
+    int i1,i2;
+    float f1,f2;
+    char c1,c2;
+
+    cout<<" Enter two integer \n";
+    cin>>i1>>i2;
+    cout<<large<int>(i1,i2) <<"is larger." <<endl;
+
+    cout<<"\nEnter two float number\n";
+    cin>>f1>>f2;
+    cout<<large<float>(f1,f2) <<"is larger."<<endl;
+
+    cout<<"\nEnter two character\n";
+    cin>>c1,c2;
+    cout<<large<char>(c1,c2) <<"has larger ASCII value.";
+
+    return 0;
+
+
+}
+
+
+3. Write a C++ program to find the largest of three elements using a template.
+Ans:-
+
+4. Write a C++ Program to Swap data using function template.
+5. Write a C++ Program to Add two numbers using function template.
+6. Write a C++ Program to find Sum of Array using function template.
+7. Write a C++ Program of Templated class derived from Non-templated class.
+8. Write a C++ Program to implement push and pop methods from stack using
+template.
+9. Write a C++ Program to Perform Simple Addition Function Using Templates.
+10. Write a C++ program to implement Hash Table using Template Class.

@@ -1,0 +1,124 @@
+Assignment - 9 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+Switch Case Problems
+
+1. Write a program which takes the month number as an input and display
+number of days in that month.
+2. Write a menu driven program with the following options:
+a. Addition
+b. Subtraction
+c. Multiplication
+d. Division
+e. Exit
+3. Write a program which takes the day number of a week and displays a
+unique greeting message for the day.
+4. Write a menu driven program with the following options:
+a. Check whether a given set of three numbers are lengths of an
+isosceles triangle or not
+b. Check whether a given set of three numbers are lengths of sides of
+a right angled triangle or not
+c. Check whether a given set of three numbers are equilateral triangle
+or not
+d. Exit.
+ /*Check whether a given set of three numbers are lengths of an
+isosceles triangle or not
+b. Check whether a given set of three numbers are lengths of sides of
+a right angled triangle or not
+c. Check whether a given set of three numbers are equilateral triangle
+or not
+d. Exit*/
+#include<stdio.h>
+int main()
+{
+    int a,b,c, choice;
+
+    printf("Enter your choice\n");
+    printf("1.To check isosceles triangle \n");
+    printf("2.To check right angled triangle \n ");
+    printf("3.To check equilateral triangle \n");
+
+    scanf("%d",&choice);
+
+    printf("Enter length of the three sides of triangle ");
+    scanf("%d %d %d",&a,&b,&c);
+
+    switch(choice)
+    {
+      case 1:
+            if((a==b) || (b==c) || (c==a))
+            printf("This is isosceles triangle ");
+            else
+                printf("Not an isoscles triangle");
+            break;
+      case 2:
+           if((a*a==b*b+c*c || b*b==c*c+ a*a || c*c==a*a +b*b))
+            printf("This is a right angled triangle ");
+           else
+                printf("Not an right angled triangle");
+           break;
+
+      case 3:
+           if ((a==b) && (b==c))
+            printf("This is an equilateral triangle");
+           else
+            printf("Not and equilateral triangle");
+            break;
+
+      default :
+         printf("invalid");
+    }
+    return 0;
+}
+
+5. Convert the following if-else-if construct into switch case:
+if(var == 1)
+System.out.println("good");
+else if(var == 2)
+System.out.println("better");
+else if(var == 3)
+System.out.println("best");
+else
+System.out.println("invalid");
+
+6. Program to check whether a year is a leap year or not. Using switch
+statement.
+#include<stdio.h>
+int main()
+{
+    int x =2016;
+
+    switch(x%100==0)
+          {
+              case 1:switch(x%400==0)
+                      {
+                          case 1: printf("Leap year");break;
+                          case 0:printf("Not Leap year");break;
+
+                      }break;
+
+              case 0: switch(x%4==0)
+                      {
+                          case 1:printf("Leap year");break;
+                          case 0:printf("Not Leap year");break;
+                      }
+                      break;
+
+          }
+
+    return 0;
+}
+
+
+7. Program to take the value from the user as input electricity unit charges
+and calculate total electricity bill according to the given condition . Using
+the switch statement.
+For the first 50 units Rs. 0.50/unit
+For the next 100 units Rs. 0.75/unit
+For the next 100 units Rs. 1.20/unit
+For units above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill.
+8. Program to convert a positive number into a negative number and negative
+number into a positive number using a switch statement.
+9. Program to Convert even number into its upper nearest odd number
+Switch Statement.
+10. C program to find all roots of a quadratic equation using switch case

@@ -1,0 +1,174 @@
+Assignment - 23 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+Basics of C++
+
+1. Write a C++ program to print Hello MySirG on the screen.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+
+    cout<<"Hello Mysirg";
+    return 0;
+}
+
+2. Write a C++ program to print Hello on the first line and MySirG on the second line
+using endl.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+
+    cout<<"Hello"<<endl <<"Mysirg";
+    return 0;
+}
+
+3. Write a C++ program to calculate the sum of two numbers.
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"Enter the two values";
+    cin>>a>>b;
+    cout<<" sum "<<a+b;
+    return 0;
+}
+
+
+4. Write a C++ program to calculate the area of a circle.
+#include<iostream>
+using namespace std;
+int main()
+{
+    int r;
+    float pie=3.14,area;
+    cout<<"Enter the value of radius";
+    cin>>r;
+    cout<<"area"<<2*pie*r;
+    return 0;
+}
+
+5. Write a C++ program to calculate the volume of a cuboid.
+#include<iostream>
+using namespace std;
+int main()
+{
+    float height,Length,breath,volume;
+    cout<<"Enter the value of height of cuboid =";
+    cin>>height;
+
+    cout<<"Enter the value of Length of cuboid =";
+    cin>>Length;
+
+    cout<<"Enter the value of breath of cuboid =";
+    cin>>breath;
+
+    cout<<"volume ="<<Length*breath*height;
+
+    return 0;
+
+}
+
+
+6. Write a C++ program to calculate an average of 3 numbers.
+#include<iostream>
+using namespace std;
+int main()
+{
+    float a,b,c,avg;
+    cout<<"Enter the value of a =";
+    cin>>a;
+
+    cout<<"Enter the value of b =";
+    cin>>b;
+
+    cout<<"Enter the value of c =";
+    cin>>c;
+
+    cout<<"avg ="<<(a+b+c)/3;
+    return 0;
+
+
+}
+
+
+7. Write a C++ program to calculate the square of a number.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter the number";
+    cin>>n;
+    cout<<"square is "<<n*n;
+    return 0;
+
+}
+
+8. Write a C++ program to swap values of two int variables without using third variable.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+  int a=3,b=9;
+  cout<<"Before swap a="<<a<<"b="<<b<<endl;
+
+  a=a+b;
+  b=a-b;
+  a=a-b;
+
+  cout<<"After swap a="<<a<<"b="<<b<<endl;
+  return 0;
+
+
+}
+
+
+9. Write a C++ program to find the maximum of two numbers.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a,b;
+    cout<<"Enter the value of a =";
+    cin>>a;
+    cout<<"Enter the value of b =";
+    cin>>b;
+
+    if(a>b)
+    {
+            cout<<"a is maximum";
+    }
+    else
+        cout<<"b is maximum";
+    return 0;
+}
+
+
+10. Write a C++ program to add all the numbers of an array of size 10.
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[10];
+    int i,sum=0;
+
+    cout<<"Enter 10 elements"<<endl;
+    for(i = 0; i<10 ; i++)
+    {
+        cin>>a[i];
+    }
+    for(i = 0; i<10 ; i++)
+    {
+        sum = sum+a[i];
+
+    }
+    cout<<"Addition of an array is"<<sum<<endl;
+    return 0;
+}
