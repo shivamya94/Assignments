@@ -40,6 +40,23 @@ int main() {
 }
 
 3. Write a program to calculate sum of first N odd natural numbers.
+#include <stdio.h>
+
+int main() {
+    int N, sum = 0;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        sum += 2 * i - 1; 
+    }
+
+    printf("The sum of the first %d odd natural numbers is: %d\n", N, sum);
+
+    return 0;
+}
+
 
 
 
