@@ -97,6 +97,39 @@ int main()
 
 4. Define a class LargestNumber and define an instance member function to find the
 Largest of three Numbers using the class.
+#include <stdio.h>
+
+typedef struct {
+    int a;
+    int b;
+    int c;
+} LargestNumber;
+
+int findLargest(LargestNumber* ln) {
+    int largest = ln->a; 
+
+    if (ln->b > largest) {
+        largest = ln->b;
+    }
+    if (ln->c > largest) {
+        largest = ln->c;
+    }
+
+    return largest;
+}
+
+int main() {
+    LargestNumber ln;
+
+    printf("Enter three numbers:\n");
+    scanf("%d %d %d", &ln.a, &ln.b, &ln.c);
+
+    printf("The largest number is: %d\n", findLargest(&ln));
+
+    return 0;
+}
+
+
 5. Define a class ReverseNumber and define an instance member function to find
 Reverse of a Number using class.
 6. Define a class Square to find the square of a number and write a C++ program to
