@@ -36,8 +36,45 @@ int main() {
 }
 
 
-
 2. Write a program to print first N terms of Fibonacci series
+#include <stdio.h>
+
+void printFibonacci(int n) {
+    if (n <= 0) {
+        printf("The number of terms should be positive.\n");
+        return;
+    }
+
+    int a = 0, b = 1;
+    if (n >= 1) {
+        printf("%d ", a);  // Print the first term
+    }
+    if (n >= 2) {
+        printf("%d ", b);  // Print the second term
+    }
+
+    for (int i = 3; i <= n; i++) {
+        int c = a + b;  // Calculate the next Fibonacci number
+        printf("%d ", c); // Print the current term
+        a = b;  // Move to the next pair
+        b = c;
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+
+    printf("Enter the number of terms (N) of the Fibonacci series: ");
+    scanf("%d", &n);
+
+    printFibonacci(n);
+
+    return 0;
+}
+
+
+
 3. Write a program to check whether a given number is there in the Fibonacci
 series or not.
 4. Write a program to calculate HCF of two numbers
