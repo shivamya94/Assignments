@@ -132,6 +132,51 @@ int main() {
 
 5. Define a class ReverseNumber and define an instance member function to find
 Reverse of a Number using class.
+#include <iostream>
+using namespace std;
+
+class ReverseNumber {
+private:
+    int number;
+
+public:
+    // Constructor to initialize the number
+    ReverseNumber(int num) {
+        number = num;
+    }
+
+    // Function to reverse the number
+    int reverse() {
+        int reversedNumber = 0;
+        int temp = number;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            temp /= 10;
+        }
+
+        return reversedNumber;
+    }
+};
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+
+    // Create an instance of ReverseNumber
+    ReverseNumber reverseNum(num);
+
+    // Call the reverse function
+    int result = reverseNum.reverse();
+
+    cout << "Reversed Number: " << result << endl;
+
+    return 0;
+}
+
+
 6. Define a class Square to find the square of a number and write a C++ program to
 Count number of times a function is called.
 7. Define a class Greatest and define instance member function to find Largest among
