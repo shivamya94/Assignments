@@ -179,6 +179,51 @@ int main() {
 
 6. Define a class Square to find the square of a number and write a C++ program to
 Count number of times a function is called.
+#include <iostream>
+
+class Square {
+private:
+    static int count; // Static variable to keep track of function calls
+
+public:
+    // Function to find the square of a number
+    int findSquare(int num) {
+        count++; // Increment the count each time the function is called
+        return num * num;
+    }
+
+    // Static function to get the count of function calls
+    static int getCount() {
+        return count;
+    }
+};
+
+// Initialize the static member variable
+int Square::count = 0;
+
+int main() {
+    Square squareObj;
+
+    int number;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
+
+    int result = squareObj.findSquare(number);
+    std::cout << "Square of " << number << " is: " << result << std::endl;
+
+    // Call the square function multiple times to see the count
+    squareObj.findSquare(3);
+    squareObj.findSquare(4);
+    squareObj.findSquare(5);
+
+    std::cout << "The square function was called " << Square::getCount() << " times." << std::endl;
+
+    return 0;
+}
+
+
+
+
 7. Define a class Greatest and define instance member function to find Largest among
 3 numbers using classes.
 8. Define a class Rectangle and define an instance member function to find the area of
