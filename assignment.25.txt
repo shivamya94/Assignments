@@ -259,6 +259,42 @@ int main() {
 
 8. Define a class Rectangle and define an instance member function to find the area of
 the rectangle.
+#include <iostream>
+
+class Rectangle {
+private:
+    // Member variables to store the length and width of the rectangle
+    double length;
+    double width;
+
+public:
+    // Constructor to initialize length and width
+    Rectangle(double l, double w) : length(l), width(w) {}
+
+    // Member function to find the area of the rectangle
+    double findArea() {
+        return length * width;
+    }
+};
+
+int main() {
+    double length, width;
+    std::cout << "Enter the length of the rectangle: ";
+    std::cin >> length;
+    std::cout << "Enter the width of the rectangle: ";
+    std::cin >> width;
+
+    // Create an object of the Rectangle class and pass length and width to the constructor
+    Rectangle rect(length, width);
+
+    // Calculate and display the area
+    double area = rect.findArea();
+    std::cout << "The area of the rectangle is: " << area << std::endl;
+
+    return 0;
+}
+
+
 
 9. Define a class Circle and define an instance member function to find the area of the
 circle.
