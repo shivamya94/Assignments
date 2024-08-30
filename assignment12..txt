@@ -122,7 +122,52 @@ int main() {
 }
 
 6. Write a recursive function to print first N even natural numbers in reverse order
+#include <stdio.h>
+
+void printEvenNaturalNumbersReverse(int n) {
+    if (n > 0) {
+        printf("%d ", 2 * n);
+        
+        printEvenNaturalNumbersReverse(n - 1);
+    }
+}
+
+int main() {
+    int n;
+    
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    
+    printf("First %d even natural numbers in reverse order are: ", n);
+    printEvenNaturalNumbersReverse(n);
+    
+    return 0;
+}
+
 7. Write a recursive function to print squares of first N natural numbers
+#include <stdio.h>
+
+void printSquaresOfNaturalNumbers(int n) {
+    if (n > 0) {
+        printSquaresOfNaturalNumbers(n - 1);
+        
+        printf("%d ", n * n);
+    }
+}
+
+int main() {
+    int n;
+    
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    
+    printf("Squares of the first %d natural numbers are: ", n);
+    printSquaresOfNaturalNumbers(n);
+    
+    return 0;
+}
+
+
 8. Write a recursive function to print binary of a given decimal number.
 #include<stdio.h>
 void binary(int n)
