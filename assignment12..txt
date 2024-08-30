@@ -50,9 +50,77 @@ int main() {
 
 
 
-3. Write a recursive function to print first N odd natural numbers
-4. Write a recursive function to print first N odd natural numbers in reverse order
+3. Write a recursive function to print first N odd natural numbers.
+#include <stdio.h>
+
+void printOddNaturalNumbers(int n) {
+    if (n > 0) {
+        printOddNaturalNumbers(n - 1);
+        
+        printf("%d ", 2 * n - 1);
+    }
+}
+
+int main() {
+    int n;
+    
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    
+    printf("First %d odd natural numbers are: ", n);
+    printOddNaturalNumbers(n);
+    
+    return 0;
+}
+
+
+4. Write a recursive function to print first N odd natural numbers in reverse order.
+#include <stdio.h>
+
+void printOddNaturalNumbersReverse(int n) {
+    if (n > 0) {
+        printf("%d ", 2 * n - 1);
+        
+        printOddNaturalNumbersReverse(n - 1);
+    }
+}
+
+int main() {
+    int n;
+    
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    
+    printf("First %d odd natural numbers in reverse order are: ", n);
+    printOddNaturalNumbersReverse(n);
+    
+    return 0;
+}
+
 5. Write a recursive function to print first N even natural numbers
+
+#include <stdio.h>
+
+void printEvenNaturalNumbers(int n) {
+    if (n > 0) {
+        printEvenNaturalNumbers(n - 1);
+        
+        printf("%d ", 2 * n);
+    }
+}
+
+int main() {
+    int n;
+    
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    
+    printf("First %d even natural numbers are: ", n);
+    printEvenNaturalNumbers(n);
+    
+    return 0;
+}
+
 6. Write a recursive function to print first N even natural numbers in reverse order
 7. Write a recursive function to print squares of first N natural numbers
 8. Write a recursive function to print binary of a given decimal number.
