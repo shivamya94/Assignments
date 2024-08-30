@@ -65,7 +65,40 @@ int main()
 
 
 3. Write a C++ program to find the largest of three elements using a template.
-Ans:-
+Ans:-#include <iostream>
+using namespace std;
+
+// Template function to find the largest of three elements
+template <typename T>
+T findLargest(T a, T b, T c) {
+    T max = a;  // Assume a is the largest
+
+    if (b > max) {
+        max = b;  // Update max if b is larger
+    }
+    if (c > max) {
+        max = c;  // Update max if c is larger
+    }
+
+    return max;
+}
+
+int main() {
+    // Test with integers
+    int x = 10, y = 20, z = 15;
+    cout << "Largest among " << x << ", " << y << ", and " << z << " is " << findLargest(x, y, z) << endl;
+
+    // Test with floating-point numbers
+    double p = 10.5, q = 20.5, r = 15.5;
+    cout << "Largest among " << p << ", " << q << ", and " << r << " is " << findLargest(p, q, r) << endl;
+
+    // Test with characters
+    char a = 'A', b = 'Z', c = 'M';
+    cout << "Largest among " << a << ", " << b << ", and " << c << " is " << findLargest(a, b, c) << endl;
+
+    return 0;
+}
+
 
 4. Write a C++ Program to Swap data using function template.
 5. Write a C++ Program to Add two numbers using function template.
