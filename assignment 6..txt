@@ -11,7 +11,7 @@ int main() {
     printf("Enter a positive integer: ");
     scanf("%d", &N);
 
-    for (int i = 1; i <= N; i++) {
+    for (int i = 1; i <= N; i++){
         sum += i;
     }
 
