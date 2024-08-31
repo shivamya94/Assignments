@@ -192,10 +192,280 @@ int main() {
 }
 
 7. Write a C++ Program of Templated class derived from Non-templated class.
+#include <iostream>
+#include <string>
+
+// Non-templated base class
+class Base {
+public:
+    Base(int value) : base_value(value) {
+        std::cout << "Base class constructor called. Value: " << base_value << std::endl;
+    }
+
+    void showBaseValue() const {
+        std::cout << "Base value: " << base_value << std::endl;
+    }
+
+protected:
+    int base_value;
+};
+
+// Templated derived class
+template <typename T>
+class Derived : public Base {
+public:
+    Derived(int baseVal, T derivedVal) : Base(baseVal), derived_value(derivedVal) {
+        std::cout << "Derived class constructor called. Derived Value: " << derived_value << std::endl;
+    }
+
+    void showDerivedValue() const {
+        std::cout << "Derived value: " << derived_value << std::endl;
+    }
+
+private:
+    T derived_value;
+};
+
+int main() {
+    // Instantiate Derived class with int type
+    Derived<int> obj1(10, 20);
+    obj1.showBaseValue();
+    obj1.showDerivedValue();
+
+    // Instantiate Derived class with std::string type
+    Derived<std::string> obj2(30, "Hello");
+    obj2.showBaseValue();
+    obj2.showDerivedValue();
+
+    return 0;
+}
+
 
 8. Write a C++ Program to implement push and pop methods from stack using
 template.
+#include <iostream>
+#include <vector>
+#include <stdexcept>
+
+// Templated Stack class
+template <typename T>
+class Stack {
+public:
+    // Push method to add an element to the stack
+    void push(const T& element) {
+        stack_data.push_back(element);
+        std::cout << "Pushed: " << element << std::endl;
+    }
+
+    // Pop method to remove the top element from the stack
+    void pop() {
+        if (stack_data.empty()) {
+            throw std::out_of_range("Stack underflow: Attempted to pop from an empty stack");
+        }
+        T poppedElement = stack_data.back();
+        stack_data.pop_back();
+        std::cout << "Popped: " << poppedElement << std::endl;
+    }
+
+    // Peek method to view the top element without removing it
+    T peek() const {
+        if (stack_data.empty()) {
+            throw std::out_of_range("Stack is empty: Cannot peek");
+        }
+        return stack_data.back();
+    }
+
+    // Check if the stack is empty
+    bool isEmpty() const {
+        return stack_data.empty();
+    }
+
+private:
+    std::vector<T> stack_data;  // Internal storage for stack elements
+};
+
+int main() {
+    Stack<int> intStack;
+
+    intStack.push(10);
+    intStack.push(20);
+    intStack.push(30);
+
+    std::cout << "Top element: " << intStack.peek() << std::endl;
+
+    intStack.pop();
+    intStack.pop();
+    intStack.pop();
+
+    // Uncommenting the line below will throw an exception because the stack is empty
+    // intStack.pop();
+
+    Stack<std::string> stringStack;
+    stringStack.push("Hello");
+    stringStack.push("World");
+
+    std::cout << "Top element: " << stringStack.peek() << std::endl;
+
+    stringStack.pop();
+    stringStack.pop();
+
+    return 0;
+}
+
 
 9. Write a C++ Program to Perform Simple Addition Function Using Templates.
+#include <iostream>
+
+// Templated function to perform addition
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    // Perform addition with integers
+    int int1 = 10, int2 = 20;
+    std::cout << "Addition of integers: " << add(int1, int2) << std::endl;
+
+    // Perform addition with floating-point numbers
+    double double1 = 5.5, double2 = 4.5;
+    std::cout << "Addition of doubles: " << add(double1, double2) << std::endl;
+
+    // Perform addition with strings
+    std::string str1 = "Hello, ", str2 = "World!";
+    std::cout << "Addition of strings: " << add(str1, str2) << std::endl;
+
+    return 0;
+}
+
+
 
 10. Write a C++ program to implement Hash Table using Template Class.
+#include <iostream>
+#include <vector>
+#include <optional>
+
+// Templated HashTable class
+template <typename K, typename V>
+class HashTable {
+public:
+    HashTable(int size) : table(size), table_size(size) {}
+
+    // Insert key-value pair into the hash table
+    bool insert(const K& key, const V& value) {
+        int index = hashFunction(key);
+        int start_index = index;
+
+        do {
+            // If the spot is empty or contains a previously deleted item
+            if (!table[index].has_value() || table[index]->deleted) {
+                table[index] = HashItem{key, value, false};
+                return true;
+            }
+
+            // If the spot contains the same key, update the value
+            if (table[index]->key == key) {
+                table[index]->value = value;
+                return true;
+            }
+
+            // Linear probing
+            index = (index + 1) % table_size;
+        } while (index != start_index);
+
+        // Hash table is full
+        return false;
+    }
+
+    // Search for a key in the hash table
+    std::optional<V> search(const K& key) const {
+        int index = hashFunction(key);
+        int start_index = index;
+
+        do {
+            if (!table[index].has_value()) {
+                // If the spot is empty, the key is not in the table
+                return std::nullopt;
+            }
+
+            if (table[index]->key == key && !table[index]->deleted) {
+                // Return the value if the key is found and it's not marked as deleted
+                return table[index]->value;
+            }
+
+            // Linear probing
+            index = (index + 1) % table_size;
+        } while (index != start_index);
+
+        // Key is not found
+        return std::nullopt;
+    }
+
+    // Delete a key-value pair from the hash table
+    bool remove(const K& key) {
+        int index = hashFunction(key);
+        int start_index = index;
+
+        do {
+            if (!table[index].has_value()) {
+                // If the spot is empty, the key is not in the table
+                return false;
+            }
+
+            if (table[index]->key == key && !table[index]->deleted) {
+                // Mark the item as deleted
+                table[index]->deleted = true;
+                return true;
+            }
+
+            // Linear probing
+            index = (index + 1) % table_size;
+        } while (index != start_index);
+
+        // Key is not found
+        return false;
+    }
+
+private:
+    struct HashItem {
+        K key;
+        V value;
+        bool deleted;
+    };
+
+    std::vector<std::optional<HashItem>> table;
+    int table_size;
+
+    // Simple hash function
+    int hashFunction(const K& key) const {
+        return std::hash<K>{}(key) % table_size;
+    }
+};
+
+int main() {
+    HashTable<int, std::string> hashTable(10);
+
+    hashTable.insert(1, "One");
+    hashTable.insert(2, "Two");
+    hashTable.insert(3, "Three");
+
+    // Search for elements
+    auto result = hashTable.search(2);
+    if (result.has_value()) {
+        std::cout << "Key 2: " << result.value() << std::endl;
+    } else {
+        std::cout << "Key 2 not found" << std::endl;
+    }
+
+    // Remove an element
+    hashTable.remove(2);
+
+    result = hashTable.search(2);
+    if (result.has_value()) {
+        std::cout << "Key 2: " << result.value() << std::endl;
+    } else {
+        std::cout << "Key 2 not found" << std::endl;
+    }
+
+    return 0;
+}
