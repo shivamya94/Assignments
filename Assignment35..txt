@@ -139,6 +139,28 @@ int main() {
 
 
 5. Write a C++ Program to Add two numbers using function template.
+#include <iostream>
+using namespace std;
+
+// Function template to add two numbers
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    int x = 5, y = 10;
+    cout << "Sum of integers: " << add(x, y) << endl;
+
+    double m = 2.5, n = 4.5;
+    cout << "Sum of doubles: " << add(m, n) << endl;
+
+    float p = 3.2f, q = 1.8f;
+    cout << "Sum of floats: " << add(p, q) << endl;
+
+    return 0;
+}
+
 6. Write a C++ Program to find Sum of Array using function template.
 7. Write a C++ Program of Templated class derived from Non-templated class.
 8. Write a C++ Program to implement push and pop methods from stack using
