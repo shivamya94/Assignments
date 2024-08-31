@@ -83,7 +83,10 @@ int main()
 }
 4. Write a function to print first N natural numbers (TSRN).
 
+
 5. Write a function to print first N odd natural numbers. (TSRN)
+
+
 6. Write a function to calculate the factorial of a number. (TSRS)
 7. Write a function to calculate the number of combinations one can make from n items
 and r selected at a time. (TSRS)
