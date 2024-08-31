@@ -101,6 +101,43 @@ int main() {
 
 
 4. Write a C++ Program to Swap data using function template.
+#include <iostream>
+using namespace std;
+
+// Function template to swap two variables
+template <typename T>
+void swapData(T &a, T &b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    cout << "Before swapping: " << "x = " << x << ", y = " << y << endl;
+    
+    // Swapping integers
+    swapData(x, y);
+    cout << "After swapping: " << "x = " << x << ", y = " << y << endl;
+
+    double m = 1.1, n = 2.2;
+    cout << "\nBefore swapping: " << "m = " << m << ", n = " << n << endl;
+    
+    // Swapping doubles
+    swapData(m, n);
+    cout << "After swapping: " << "m = " << m << ", n = " << n << endl;
+
+    char c1 = 'A', c2 = 'B';
+    cout << "\nBefore swapping: " << "c1 = " << c1 << ", c2 = " << c2 << endl;
+    
+    // Swapping characters
+    swapData(c1, c2);
+    cout << "After swapping: " << "c1 = " << c1 << ", c2 = " << c2 << endl;
+
+    return 0;
+}
+
+
 5. Write a C++ Program to Add two numbers using function template.
 6. Write a C++ Program to find Sum of Array using function template.
 7. Write a C++ Program of Templated class derived from Non-templated class.
