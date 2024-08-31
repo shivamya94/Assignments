@@ -162,6 +162,35 @@ int main() {
 }
 
 6. Write a C++ Program to find Sum of Array using function template.
+#include <iostream>
+using namespace std;
+
+// Function template to calculate the sum of an array
+template <typename T>
+T arraySum(T arr[], int size) {
+    T sum = 0;
+    for(int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+int main() {
+    int intArr[] = {1, 2, 3, 4, 5};
+    int intSize = sizeof(intArr) / sizeof(intArr[0]);
+    cout << "Sum of integer array: " << arraySum(intArr, intSize) << endl;
+
+    double doubleArr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+    int doubleSize = sizeof(doubleArr) / sizeof(doubleArr[0]);
+    cout << "Sum of double array: " << arraySum(doubleArr, doubleSize) << endl;
+
+    float floatArr[] = {1.5f, 2.5f, 3.5f, 4.5f, 5.5f};
+    int floatSize = sizeof(floatArr) / sizeof(floatArr[0]);
+    cout << "Sum of float array: " << arraySum(floatArr, floatSize) << endl;
+
+    return 0;
+}
+
 7. Write a C++ Program of Templated class derived from Non-templated class.
 8. Write a C++ Program to implement push and pop methods from stack using
 template.
